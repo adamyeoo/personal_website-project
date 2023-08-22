@@ -1,0 +1,13 @@
+# Created by https://www.toptal.com/developers/gitignore/api/django
+# Edit at https://www.toptal.com/developers/gitignore?templates=django
+
+# Basically, these are files that we don't want to upload on github (like cache, databases, anything with passwords, ,,,)
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/media
+/static
