@@ -5,7 +5,4 @@ from django.http import HttpResponse ## to return HTTP response as a string...
 from django.shortcuts import render ## to return HTTP response as HTML file
 
 def home(request):
-    return render (request, 'home.html')
-
-def blog(request):
-    return render (request, 'blog.html')
+    return HttpResponse('WASSUP MY NINJAS')
