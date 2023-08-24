@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>Adam Yeo Portfolio</title>
+    <title>Adam's Blogs</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -158,60 +158,51 @@
 
 <!-- NAVBAR -->
 <header data-bs-theme="dark">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'homepage' %}">Adam Yeo</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="https://www.linkedin.com/in/adamyeo6762/">LinkedIn</a>
-              <a class="nav-link" href="{% static 'resume_website.pdf' %}">Resume</a>
-              <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
-            </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'homepage' %}">Adam Yeo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="https://www.linkedin.com/in/adamyeo6762/">LinkedIn</a>
+            <a class="nav-link" href="{% static 'resume_website.pdf' %}">Resume</a>
+            <a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 </header>
 
 <main>
-  <!-- Jumbotron -->
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Adam Yeo</h1>
-        <p class="lead text-body-secondary">Hi, I'm Adam! I love working with data!</p>
-        <p>
-          <a href="mailto:addamyeo@gmail.com" class="btn btn-primary my-2">Email Me!</a>
-        </p>
-        <img src="{% static 'linkedin_copy.jpg' %}" height="250" />
-      </div>
+    <!-- Intro -->
+    <div class="container">
+        <h1 class="text-center pt-3">Welcome to Adam's blogs</h1>
+        <br />
+        <br />
+        <h2>Latest Posts:</h2>
+        <hr />
     </div>
-  </section>
 
-  <!-- Job Cards -->
+    <!-- Blog Cards -->
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="row">
         <!-- Loop -->
 
-        {% for job in jobs.all %} <!-- Loops thru each Home objects -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="card=img-top" src="{{ job.image.url }}" width="100%" height="300" />
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
+        {% for blog in blogs.all %} <!-- Loops thru each Home objects -->
+            <a href="{% url 'details' blog.id %}"><h3>{{ blog.title }}</h3></a>
+            {{ blog.pub_date_pretty }}
+            <picture>
+                <img class="img-fluid" src="{{ blog.image.url }}" style="width:300px; height:auto;" />
+            </picture>
+            <p>{{ blog.summary }}</p>
         {% endfor %}
-
 
       </div>
     </div>
   </div>
-
 </main>
 
 <footer class="text-body-secondary py-5">
