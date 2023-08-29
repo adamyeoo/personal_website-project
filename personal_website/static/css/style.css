@@ -169,6 +169,10 @@ section {
   height: 80vh;
 }
 
+.linkedin-pfp {
+  border-radius: 50%;
+}
+
 .section__pic-container {
   display: flex;
   height: 400px;
@@ -231,7 +235,7 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: rgb(45, 95, 200) 0.1rem solid;
 }
 
 .btn-color-1:hover,
@@ -241,7 +245,7 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(53, 53, 53);
+  background: rgb(45, 95, 200);
   color: white;
 }
 
