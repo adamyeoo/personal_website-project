@@ -169,6 +169,11 @@ section {
   height: 80vh;
 }
 
+.profile_arrow {
+  position: absolute;
+  bottom: 35px;
+}
+
 .linkedin-pfp {
   border-radius: 50%;
 }
@@ -265,6 +270,7 @@ section {
   gap: 1rem;
 }
 
+
 /* ABOUT SECTION */
 
 #about {
@@ -293,8 +299,8 @@ section {
 
 .arrow {
   position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
+  right: 34rem;
+  bottom: 10px;
 }
 
 .details-container {
