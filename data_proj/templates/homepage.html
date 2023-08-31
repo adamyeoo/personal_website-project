@@ -13,7 +13,7 @@
   <body>
     <!-- Nav Bar -->
     <nav id="desktop-nav">
-      <div class="logo">Adam Yeo</div>
+      <div class="logo"><b>Adam Yeo<b></div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About Me</a></li>
@@ -44,12 +44,16 @@
     <!-- Profile Display -->
     <section id="profile">
       <div class="section__pic-container">
-        <img class="linkedin-pfp" src="{% static 'linkedin_copy.jpg' %}" alt="John Doe profile picture" />
+        <img
+          class="linkedin-pfp"
+          src="{% static 'linkedin_copy.jpg' %}"
+          alt="John Doe profile picture"
+        />
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Why hello there! I'm</p>
+        <p class="section__text__p1" style="color: rgb(75,75,75);">Why hello there! I'm</p>
         <h1 class="title">Adam</h1>
-        <p class="section__text__p2">Data Enthusiast Based In Toronto</p>
+        <p class="section__text__p2" style="color: rgb(75,75,75);">Data Enthusiast Based In Toronto</p>
         <div class="btn-container">
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
             Contact Me!
@@ -67,6 +71,12 @@
             class="icon"
             onclick="location.href='https://github.com/adamyeoo'"
             alt="My Github profile"
+          />
+          <img
+            src="{% static '/icons/devpost.svg' %}"
+            class="icon"
+            onclick="location.href='https://devpost.com/addamyeo'"
+            alt="My Devpost profile"
           />
         </div>
       </div>
@@ -90,11 +100,12 @@
             class="about-pic"
             src="{% static 'linkedin_copy.jpg' %}"
             alt="Profile picture"
+            style = "border: 2px solid rgb(217, 186, 108);"
           />
         </div>
         <div class="about-details-container">
           <div class="text-container">
-            <h1>Who am I?</h1>
+            <h1 class="about-heading">Who am I?</h1>
             <p>
               I'm a Statistics student at the University of Waterloo with a
               strong passion for data science & analytics and its endless real-world
@@ -109,7 +120,7 @@
                 src="{% static '/icons/education.png' %}"
                 alt="Education icon"
               />
-              <h2>Education</h2>
+              <h2 style = "color: rgb(217, 186, 108);">Education</h2>
               <p>University of Waterloo<br />Honours B.Math in Statistics</p>
             </div>
             <div class="details-container">
@@ -118,12 +129,12 @@
                 src="{% static '/icons/experience.png' %}"
                 alt="Experience icon"
               />
-              <h2>Tools & Libraries</h2>
+              <h2 style = "color: rgb(217, 186, 108);">Tools & Libraries</h2>
               <p>Python, SQL, R, Django, PostgreSQL<br>Pandas, Numpy, SKLearn, NLTK<br>Tableau, PowerBI, Excel, Jupyter</p>
             </div>
           </div>
           <div class="text-container">
-            <h1>What motivates me?</h1>
+            <h1 class="about-heading">What motivates me?</h1>
             <p>
               One interesting thing I learned is that, though raw unprocessed datasets
               can often look bland or jumbled, they can tell a vast range of interesting
@@ -149,7 +160,7 @@
         <div class="about-containers">
           <!-- Loop -->
           {% for proj in data_projects.all %}
-          <div class="details-container color-container">
+          <div class="details-container color-container" style = "border: 1.5px solid rgb(217, 186, 108);">
             <div class="article-container">
               <img
                 class="project-img"
@@ -165,12 +176,14 @@
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='{{ proj.devpost }}';"
+                style="color: rgb(75,75,75)"
               >
                 Devpost
               </button>
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='{{ proj.github }}';"
+                style="color: rgb(75,75,75)"
               >
                 GitHub
               </button>
@@ -192,16 +205,17 @@
       <h1 class="title">Experience</h1>
       <div class="experience-details-container">
         <div class="exp-containers">
+          <!-- Temerity -->
           <div class="details2-container">
             <div class = "row">
               <div class="column left">
-                <h2 class="experience-sub-title">Data Analyst</h2>
-                <h3>Temerity Analytics</h3>
+                <h2 class="job-posn-name">Data Analyst</h2>
+                <h3 class="company-name">Temerity Analytics</h3>
                 <br>
               </div>
               <div class="column right">
-                <h4>May 2023 - April 2024</h4>
-                <h4>Toronto, ON</h4>
+                <h4 class="date-loc">Sep 2023 - Apr 2024</h4>
+                <h4 class="date-loc">Toronto, ON</h4>
               </div>
             </div>
             <div class="bullet-points">
@@ -213,11 +227,29 @@
                 <li>Created weekly MS PowerPoint slides to present my analyses to senior cancer researchers and lab technicians</li>
               </ul>
             </div>
-            
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Jr. Bioinformatician</h2>
-            
+          <!-- Temerity -->
+          <div class="details2-container">
+            <div class = "row">
+              <div class="column left">
+                <h2 class="job-posn-name">Jr. Bioinformatician</h2>
+                <h3 class="company-name">UHN - Princess Margaret Cancer Centre</h3>
+                <br>
+              </div>
+              <div class="column right">
+                <h4 class="date-loc">May 2022 - Aug 2022</h4>
+                <h4 class="date-loc">Toronto, ON</h4>
+              </div>
+            </div>
+            <div class="bullet-points">
+              <ul>
+                <li>Parsed and cleaned 1M+ raw datasets of genomic sequences using BCFTools to process for visualization</li>
+                <li>Constructed a wide array of data visualizations (boxplot, histogram, heatmap, etc) using Matplotlib & Tableau</li>
+                <li>Implemented correlation matrices using Pearson rank model to reduce lab costs for specimen comparisons</li>
+                <li>Wrote automated scripts to pull and modify organoid data & export as CSV files to increase workflow by 20%</li>
+                <li>Created weekly MS PowerPoint slides to present my analyses to senior cancer researchers and lab technicians</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -251,19 +283,19 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->>
+    <!-- Footer -->
     <footer>
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2023 Adam Yeo. All Rights Reserved</p>
+      <p>Copyright &#169; 2023 Adam Yeo.</p>
     </footer>
     <script src="{% static '/js/script.js' %}"></script>
   </body>

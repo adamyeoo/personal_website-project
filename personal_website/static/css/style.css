@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+
 * {
   margin: 0;
   padding: 0;
@@ -46,20 +47,21 @@ nav {
 }
 
 a {
-  color: black;
+  color: rgb(217, 186, 108); /*PRIMARY*/
   text-decoration: none;
   text-decoration-color: white;
 }
 
 a:hover {
-  color: grey;
+  color: rgb(203, 177, 229);;
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(181, 181, 181);
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: rgb(217, 186, 108); /*PRIMARY*/
 }
 
 .logo:hover {
@@ -176,6 +178,16 @@ section {
 
 .linkedin-pfp {
   border-radius: 50%;
+  border: 2px solid rgb(217, 186, 108);
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 5px); }
+  100%   { transform: translate(0, -0px); }   
 }
 
 .section__pic-container {
@@ -196,16 +208,19 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  color: rgb(203, 177, 229);
 }
 
 .section__text__p2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
+  color: rgb(203, 177, 229);
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
+  color: rgb(217, 186, 108); /*PRIMARY*/
 }
 
 #socials-container {
@@ -241,7 +256,7 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-  border: rgb(45, 95, 200) 0.1rem solid;
+  border: rgb(217, 186, 108) 0.1rem solid;
 }
 
 .btn-color-1:hover,
@@ -251,12 +266,12 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(45, 95, 200);
+  background: rgb(217, 186, 108);
   color: white;
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: rgb(203, 177, 229);
 }
 
 .btn-color-2 {
@@ -264,7 +279,7 @@ section {
 }
 
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  border: rgb(203, 177, 229) 0.1rem solid;
 }
 
 .btn-container {
@@ -276,6 +291,10 @@ section {
 
 #about {
   position: relative;
+}
+
+.about-heading {
+  color: rgb(230, 190, 90);
 }
 
 .about-containers {
@@ -310,9 +329,9 @@ section {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   flex: 1;
-  background: white;
+  background: rgb(253, 250, 253);
   border-radius: 1.5rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: 1.5px solid rgb(217, 186, 108);
   border-color: rgb(163, 163, 163);
   text-align: center;
 }
@@ -328,10 +347,63 @@ section {
   margin: auto 0;
 }
 
+/* PROJECTS SECTION */
+
+#projects {
+  position: relative;
+}
+
+.details2-container {
+  padding: 1.25rem;
+  flex: 1;
+  background: rgb(252, 250, 252);
+  border-radius: 1.5rem;
+  border: 1.5px solid rgb(217, 186, 108);
+  text-align: start;
+}
+
+.color-container {
+  border-color: rgb(163, 163, 163);
+  background: rgb(251, 250, 251);
+}
+
+.project-img {
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+}
+
+.project-title {
+  margin: 10px;
+  color: black;
+}
+
+.project-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
+}
+
+
 /* EXPERIENCE SECTION */
 
 #experience {
   position: relative;
+}
+
+.job-posn-name {
+  color: rgb(217, 186, 108);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0rem;
+}
+
+.company-name {
+  color: rgb(230, 190, 90);
+}
+
+.date-loc {
+  color: rgb(100,100,100);
 }
 
 .exp-containers {
@@ -355,15 +427,16 @@ section {
 }
 
 .left {
-  width: 70%;
+  width: 72%;
 }
 
 .right {
-  width: 30%;
+  width: 28%;
 }
 
 .bullet-points {
   margin-left: 1rem;
+  color: rgb(100,100,100);
 }
 ul li { padding: 2px 0px; } /*line spacing*/
 
@@ -375,7 +448,7 @@ ul li { padding: 2px 0px; } /*line spacing*/
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
+  color: rgb(230, 190, 90);
   font-weight: 600;
   font-size: 2rem;
   margin-top: -0.5rem;
@@ -408,43 +481,6 @@ article .icon {
   cursor: default;
 }
 
-/* PROJECTS SECTION */
-
-#projects {
-  position: relative;
-}
-
-.details2-container {
-  padding: 1.25rem;
-  flex: 1;
-  background: white;
-  border-radius: 1.5rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  text-align: start;
-}
-
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
-}
-
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-}
-
-.project-title {
-  margin: 10px;
-  color: black;
-}
-
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
-}
-
 /* CONTACT */
 
 #contact {
@@ -460,7 +496,7 @@ article .icon {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  background: rgb(253, 250, 253);
   margin: 2rem auto;
   padding: 0.5rem;
 }
