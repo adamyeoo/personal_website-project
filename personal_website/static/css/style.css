@@ -227,7 +227,8 @@ section {
 .btn-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  position: relative;
+  bottom: 0px;
 }
 
 .btn {
@@ -304,10 +305,13 @@ section {
 }
 
 .details-container {
-  padding: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   flex: 1;
   background: white;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
@@ -330,11 +334,52 @@ section {
   position: relative;
 }
 
+.exp-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-left: -7rem;
+  margin-right: -7rem;
+
+}
+
+/* Something interesting will happen if you remove this */
+.exp-containers,
+.about-details-container {
+  display: flex;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+}
+
+.bullet-points {
+  margin-left: 1rem;
+}
+ul li { padding: 2px 0px; } /*line spacing*/
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .experience-sub-title {
   color: rgb(85, 85, 85);
   font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0rem;
 }
 
 .experience-details-container {
@@ -369,6 +414,16 @@ article .icon {
   position: relative;
 }
 
+.details2-container {
+  padding: 1.25rem;
+  flex: 1;
+  background: white;
+  border-radius: 1.5rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: start;
+}
+
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
@@ -381,7 +436,7 @@ article .icon {
 }
 
 .project-title {
-  margin: 1rem;
+  margin: 10px;
   color: black;
 }
 
